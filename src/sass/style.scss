@@ -13,8 +13,16 @@
 @import './components/container';
 @import './components/navbar';
 @import './components/logo';
-@import './components/_button';
-@import './components/_icon';
-@import './components/_link';
+@import './components/button';
+@import './components/icon';
+@import './components/link';
+@import './components/project';
+@import './components/mini-projects';
+@import './components/card';
+@import './components/skill-point';
+@import './components/skill-grid';
+@import './components/section';
 
 @import './utilities/spacing';
+@import './utilities/typography';
+@import './utilities/lists';

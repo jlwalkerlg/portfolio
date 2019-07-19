@@ -13,7 +13,7 @@ const Landing = () => {
         <div className="landing__left">
           <h1 className="mb-0">Jordan Walker</h1>
 
-          <p className="landing__subheading mt-2">
+          <p className="landing__subheading mt-4">
             Full-stack web developer from Bradford, UK.
           </p>
 

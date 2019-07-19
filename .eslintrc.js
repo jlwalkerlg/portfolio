@@ -20,5 +20,6 @@ module.exports = {
   rules: {
     'react/jsx-filename-extension': 'off',
     'prettier/prettier': 'error',
+    'react/no-array-index-key': 'off',
   },
 };

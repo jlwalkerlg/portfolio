@@ -1,0 +1,30 @@
+.project {
+  display: flex;
+  margin-top: 4rem;
+}
+
+.project__preview {
+  flex: 5;
+
+  .project:not(.project--reversed) > & {
+    margin-right: 2rem;
+  }
+
+  .project--reversed > & {
+    margin-left: 2rem;
+    order: 2;
+  }
+}
+
+.project__content {
+  flex: 7;
+
+  .project--reversed > & {
+    order: 1;
+  }
+}
+
+.project__heading {
+  margin: 0;
+  color: $gray-300;
+}
