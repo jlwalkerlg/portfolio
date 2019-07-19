@@ -1,0 +1,13 @@
+.about__container {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.about__left {
+  flex: 5;
+}
+
+.about__right {
+  flex: 7;
+}

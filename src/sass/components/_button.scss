@@ -11,7 +11,7 @@
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
-.btn-primary {
+.btn--primary {
   background-color: $primary;
   color: $light;
   border: 2px solid transparent;
@@ -23,7 +23,7 @@
   }
 }
 
-.btn-outline {
+.btn--outline {
   background-color: $light;
   color: $primary;
   border: 2px solid $primary;

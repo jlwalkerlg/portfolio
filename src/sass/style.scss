@@ -6,10 +6,15 @@
 
 @import './base';
 
-@import './components/container';
+@import './typography';
+
 @import './components/landing';
+@import './components/about';
+@import './components/container';
 @import './components/navbar';
 @import './components/logo';
 @import './components/_button';
 @import './components/_icon';
 @import './components/_link';
+
+@import './utilities/spacing';

@@ -1,12 +1,12 @@
 .landing {
   position: relative;
-  overflow: hidden;
+  min-height: 100vh;
 
   background: url('../img/Ellipse\ 14.svg') right -400px top -400px / 800px
     800px no-repeat;
 }
 
-.landing__content {
+.landing__container {
   display: flex;
   margin-top: 100px;
 }
@@ -21,30 +21,13 @@
   flex: 5;
 }
 
-.landing__actions {
-  margin-top: 20px;
-
-  & > .btn {
-    margin-right: 10px;
-  }
-}
-
 .landing__contact {
   display: flex;
   align-items: center;
   margin-top: 100px;
   color: $primary;
-
-  & > a {
-    margin-right: 1.2rem;
-  }
-}
-
-.landing__heading {
-  margin-bottom: 0;
 }
 
 .landing__subheading {
-  margin-top: 0.5rem;
   font-size: 1.2rem;
 }

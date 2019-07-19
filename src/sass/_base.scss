@@ -3,6 +3,7 @@ html {
   font-size: $font-size-base;
   font-weight: $font-weight-base;
   line-height: $line-height-base;
+  color: $font-color-base;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -23,6 +24,10 @@ h3 {
 
 h1 {
   font-size: 3.5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
 }
 
 img,
