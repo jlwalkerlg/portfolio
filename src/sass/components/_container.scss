@@ -1,0 +1,31 @@
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@include bp($bp-sm) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@include bp($bp-md) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@include bp($bp-lg) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@include bp($bp-xl) {
+  .container {
+    max-width: 1140px;
+  }
+}

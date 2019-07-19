@@ -1,0 +1,25 @@
+//TODO: nicer hover effects.
+
+.link {
+  transition: color 1.5 ease-in-out;
+}
+
+.link-plain {
+  color: inherit;
+}
+
+.link--primary {
+  color: $primary;
+
+  &:hover {
+    color: darken($primary, 10%);
+  }
+}
+
+.link--light {
+  color: $light;
+
+  &:hover {
+    color: darken($light, 10%);
+  }
+}
