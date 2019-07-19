@@ -3,7 +3,7 @@ import { ReactComponent as CodingSvg } from '../img/undraw_coding_6mjf.svg';
 
 const About = () => {
   return (
-    <article id="about">
+    <article id="about" className="section">
       <div className="about__container container">
         <div className="about__left">
           <div>
@@ -13,7 +13,7 @@ const About = () => {
         <div className="about__right ml-5">
           <h2 className="mb-0">About Me.</h2>
 
-          <p className="text-body mt-2 mb-0">
+          <p className="text-body mt-3 mb-0">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
             incidunt. Consequatur pariatur cupiditate, reprehenderit eligendi,
             vel ipsum nemo delectus, atque quam optio commodi! Enim obcaecati
