@@ -28,8 +28,8 @@ $directions: (
   }
 
   .my-#{$unit} {
-    margin-left: $size;
-    margin-right: $size;
+    margin-top: $size;
+    margin-bottom: $size;
   }
 
   @each $abbr, $direction in $directions {

@@ -34,3 +34,14 @@
     border: 2px solid transparent;
   }
 }
+
+.btn--light {
+  background-color: $light;
+  color: $primary;
+  border: 2px solid $light;
+
+  &:hover {
+    background-color: darken($light, 10%);
+    border: 2px solid darken($light, 10%);
+  }
+}

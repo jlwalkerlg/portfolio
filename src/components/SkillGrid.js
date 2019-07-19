@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SkillPoint from './SkillPoint';
 
-const SkillPoints = ({ skills }) => {
+const SkillGrid = ({ skills }) => {
   return (
     <ul className="skill-grid list-unstyled">
       {skills.map((skill, index) => {
         return (
-          <li className="skill-grid__item">
-            <SkillPoint key={index} skill={skill} />
+          <li key={index} className="skill-grid__item">
+            <SkillPoint skill={skill} />
           </li>
         );
       })}
@@ -16,8 +16,8 @@ const SkillPoints = ({ skills }) => {
   );
 };
 
-SkillPoints.propTypes = {
+SkillGrid.propTypes = {
   skills: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
 };
 
-export default SkillPoints;
+export default SkillGrid;
