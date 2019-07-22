@@ -15,8 +15,7 @@ const MiniProject = ({
 
         <p className="mt-0">{description}</p>
 
-        <div style={{ textAlign: 'center' }}>
-          <SkillGrid skills={skills} />
+        <div>
           {skills.map((skill, index) => {
             return <SkillPoint key={index} skill={skill} />;
           })}
