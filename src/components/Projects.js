@@ -61,19 +61,23 @@ const miniProjects = [
 
 const Projects = () => {
   return (
-    <section id="projects">
+    <section id="projects" className="projects">
       <div className="container">
-        <h2 className="text-center">Projects.</h2>
+        <h2 className="my-0 text-center">Projects.</h2>
 
-        {projects.map((project, index) => {
-          const reversed = index % 2 !== 0;
-          return <Project key={index} project={project} reversed={reversed} />;
-        })}
+        <section>
+          {projects.map((project, index) => {
+            const reversed = index % 2 !== 0;
+            return (
+              <Project key={index} project={project} reversed={reversed} />
+            );
+          })}
+        </section>
 
-        <section className="section">
-          <h3 className="text-center">Mini Projects.</h3>
+        <section className="mt-5">
+          <h3 className="text-center my-0">Mini Projects.</h3>
 
-          <section className="mini-projects mt-5">
+          <section className="mini-projects mt-4">
             {miniProjects.map((project, index) => {
               return <MiniProject key={index} project={project} />;
             })}

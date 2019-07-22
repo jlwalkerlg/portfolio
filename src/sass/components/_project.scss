@@ -1,18 +1,43 @@
 .project {
-  display: flex;
-  margin-top: 4rem;
+  margin-top: 2rem;
+  text-align: center;
+
+  padding-bottom: 2rem;
+  border-bottom: 1px solid $gray-100;
+
+  &:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  @include md {
+    display: flex;
+    text-align: left;
+  }
 }
 
 .project__preview {
   flex: 5;
 
-  .project:not(.project--reversed) > & {
-    margin-right: 2rem;
+  max-width: 300px;
+  margin: 0 auto;
+
+  @include md {
+    max-width: none;
+    margin: 0;
+
+    .project:not(.project--reversed) > & {
+      margin-right: 2rem;
+    }
+
+    .project--reversed > & {
+      margin-left: 2rem;
+      order: 2;
+    }
   }
 
-  .project--reversed > & {
-    margin-left: 2rem;
-    order: 2;
+  > img {
+    display: block;
   }
 }
 
@@ -21,6 +46,12 @@
 
   .project--reversed > & {
     order: 1;
+  }
+
+  margin-top: 1.5rem;
+
+  @include md {
+    margin-top: 0;
   }
 }
 
