@@ -5,6 +5,15 @@
 }
 
 .mini-project {
-  margin: 0 2rem;
   width: 250px;
+
+  margin: 2rem 2rem 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  @include md {
+    margin: 0 2rem;
+  }
 }
