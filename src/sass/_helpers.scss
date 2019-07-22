@@ -3,3 +3,21 @@
     @content;
   }
 }
+
+@mixin sm {
+  @include bp($bp-sm) {
+    @content;
+  }
+}
+
+@mixin md {
+  @include bp($bp-md) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @include bp($bp-lg) {
+    @content;
+  }
+}

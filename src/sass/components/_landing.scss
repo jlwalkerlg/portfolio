@@ -1,31 +1,93 @@
 .landing {
   position: relative;
-  min-height: 100vh;
 
-  background: url('../img/Ellipse\ 14.svg') right -400px top -400px / 800px
-    800px no-repeat;
+  background: url('../img/Ellipse\ 14.svg') right -400px top -400px / 585px
+    585px no-repeat;
+
+  @include bp(403px) {
+    background: url('../img/Ellipse\ 14.svg') right -350px top -450px / 600px
+      600px no-repeat;
+  }
+
+  @include bp(576px) {
+    background: url('../img/Ellipse\ 14.svg') right -400px top -450px / 680px
+      680px no-repeat;
+  }
+
+  @include bp(720px) {
+    background: url('../img/Ellipse\ 14.svg') right -400px top -450px / 700px
+      700px no-repeat;
+  }
+
+  @include md {
+    min-height: 100vh;
+    background: url('../img/Ellipse\ 14.svg') right -400px top -400px / 800px
+      800px no-repeat;
+  }
 }
 
 .landing__container {
-  display: flex;
-  margin-top: 100px;
+  margin-top: 25px;
+  text-align: center;
+
+  @include md {
+    display: flex;
+    text-align: left;
+  }
 }
 
 .landing__left {
   flex: 7;
-  display: flex;
-  flex-direction: column;
+
+  @include md {
+    padding-top: 60px;
+  }
 }
 
 .landing__right {
   flex: 5;
+
+  display: none;
+
+  @include md {
+    display: block;
+  }
+}
+
+.landing__buttons {
+  > .btn {
+    display: block;
+    width: 100%;
+
+    &:first-child {
+      margin-bottom: 0.5rem;
+
+      @include bp(413px) {
+        margin-right: 0.5rem;
+        margin-bottom: 0;
+      }
+    }
+
+    @include bp(413px) {
+      display: inline-block;
+      width: auto;
+    }
+  }
 }
 
 .landing__contact {
-  display: flex;
-  align-items: center;
-  margin-top: 100px;
+  margin-top: 50px;
   color: $primary;
+
+  @include sm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @include md {
+    justify-content: start;
+  }
 }
 
 .landing__subheading {

@@ -4,6 +4,13 @@ $bp-md: 768px;
 $bp-lg: 992px;
 $bp-xl: 1200px;
 
+$bp-map: (
+  'sm': $bp-sm,
+  'md': $bp-md,
+  'lg': $bp-lg,
+  'xl': $bp-xl,
+);
+
 // Colors.
 $light: #fff;
 $gray-100: #efefef;

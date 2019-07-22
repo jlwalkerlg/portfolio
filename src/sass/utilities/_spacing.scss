@@ -38,3 +38,29 @@ $directions: (
     }
   }
 }
+
+@each $bp-unit, $bp in $bp-map {
+  @include bp($bp) {
+    @each $unit, $size in $sizes {
+      .m-#{$bp-unit}-#{$unit} {
+        margin: $size;
+      }
+
+      .mx-#{$bp-unit}-#{$unit} {
+        margin-left: $size;
+        margin-right: $size;
+      }
+
+      .my-#{$bp-unit}-#{$unit} {
+        margin-top: $size;
+        margin-bottom: $size;
+      }
+
+      @each $abbr, $direction in $directions {
+        .m#{$abbr}-#{$bp-unit}-#{$unit} {
+          margin-#{$direction}: $size;
+        }
+      }
+    }
+  }
+}

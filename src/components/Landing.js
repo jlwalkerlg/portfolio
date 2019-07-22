@@ -11,32 +11,32 @@ const Landing = () => {
 
       <div className="landing__container container">
         <div className="landing__left">
-          <h1 className="mb-0">Jordan Walker</h1>
+          <h1 className="mt-0 mb-0">Jordan Walker</h1>
 
-          <p className="landing__subheading mt-4">
+          <p className="landing__subheading mt-2 mt-md-0">
             Full-stack web developer from Bradford, UK.
           </p>
 
-          <div className="mt-4">
+          <div className="landing__buttons mt-4">
             <button type="button" className="btn btn--outline">
               DOWNLOAD C.V.
             </button>
 
-            <button type="button" className="btn btn--primary ml-3">
+            <button type="button" className="btn btn--primary">
               CONTACT ME
             </button>
           </div>
 
           <div className="landing__contact">
-            <a href="https://github.com" className="icon-wrap ml-3">
+            <a href="https://github.com" className="icon-wrap mx-2">
               <GitHubLogo className="icon" />
             </a>
-            <a href="https://linkedin.com" className="icon-wrap ml-3">
+            <a href="https://linkedin.com" className="icon-wrap mx-2">
               <LinkedInLogo className="icon" />
             </a>
             <a
               href="mailto:walker.jlg@gmail.com"
-              className="link link--primary ml-3"
+              className="link link--primary d-block mt-2 mt-md-0"
             >
               walker.jlg@gmail.com
             </a>
