@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SkillGrid from './SkillGrid';
 import SkillPoint from './SkillPoint';
 
 const MiniProject = ({
