@@ -36,7 +36,7 @@ const Landing = () => {
             </a>
             <a
               href="mailto:walker.jlg@gmail.com"
-              className="link link--primary d-block mt-2 mt-md-0"
+              className="link link--primary d-block mt-4 mt-sm-0"
             >
               walker.jlg@gmail.com
             </a>
