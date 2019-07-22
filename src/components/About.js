@@ -3,15 +3,15 @@ import { ReactComponent as CodingSvg } from '../img/undraw_coding_6mjf.svg';
 
 const About = () => {
   return (
-    <article id="about" className="section">
+    <article id="about" className="about section">
       <div className="about__container container">
         <div className="about__left">
           <div>
             <CodingSvg width="100%" height="100%" />
           </div>
         </div>
-        <div className="about__right ml-5">
-          <h2 className="mb-0">About Me.</h2>
+        <div className="about__right">
+          <h2 className="my-0">About Me.</h2>
 
           <p className="text-body mt-3 mb-0">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,

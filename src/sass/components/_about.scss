@@ -1,13 +1,39 @@
+.about {
+  text-align: center;
+  margin-top: 1rem;
+
+  @include md {
+    margin-top: 0;
+    text-align: left;
+  }
+}
+
 .about__container {
-  display: flex;
-  align-items: center;
-  // min-height: 100vh;
+  @include md {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .about__left {
   flex: 5;
+
+  max-width: 250px;
+  margin: 0 auto;
+
+  @include md {
+    max-width: none;
+    margin: 0;
+  }
 }
 
 .about__right {
   flex: 7;
+
+  margin-top: 2rem;
+
+  @include md {
+    margin-top: 0;
+    margin-left: 3rem;
+  }
 }

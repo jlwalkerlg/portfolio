@@ -1,3 +1,7 @@
 .section {
-  padding: 7rem 0;
+  padding: 3rem 0;
+
+  @include md {
+    padding: 7rem 0;
+  }
 }
