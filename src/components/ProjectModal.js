@@ -1,26 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Modal from 'react-modal';
+import Modal from './Modal';
 
 import { ReactComponent as OpenIcon } from '../img/baseline-open_in_new-24px.svg';
 import { ReactComponent as CodeIcon } from '../img/baseline-code-24px.svg';
-
-Modal.setAppElement('#root');
 
 const ProjectModal = ({ project, onClose }) => {
   const { title, description, gif, sourceCodeLink, liveDemoLink } = project;
 
   return (
-    <Modal
-      isOpen
-      contentLabel={title}
-      className="modal__container"
-      overlayClassName="modal__backdrop"
-      bodyOpenClassName="no-scroll"
-      shouldCloseOnOverlayClick
-      onRequestClose={onClose}
-      shouldCloseOnEsc
-    >
+    <Modal onClose={onClose} label={title}>
       <div className="project-modal">
         <div className="project-modal__img-wrap">
           <img src={gif} alt={`${title} gif`} />
@@ -53,10 +42,6 @@ const ProjectModal = ({ project, onClose }) => {
           )}
         </div>
       </div>
-
-      <button type="button" className="modal__close" onClick={onClose}>
-        <span className="sr-only">Close Modal</span>
-      </button>
     </Modal>
   );
 };
