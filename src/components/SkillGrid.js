@@ -5,9 +5,9 @@ import SkillPoint from './SkillPoint';
 const SkillGrid = ({ skills }) => {
   return (
     <ul className="skill-grid list-unstyled">
-      {skills.map((skill, index) => {
+      {skills.map(skill => {
         return (
-          <li key={index} className="skill-grid__item">
+          <li key={skill} className="skill-grid__item">
             <SkillPoint skill={skill} />
           </li>
         );

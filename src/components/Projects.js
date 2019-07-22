@@ -1,12 +1,19 @@
 import React from 'react';
+import Project from './Project';
+import MiniProject from './MiniProject';
+
 // TODO: use smaller images for smaller screens.
 import bookablePreview from '../img/bookable-preview@2x.jpg';
 import bellonaPreview from '../img/bellona-preview@2x.jpg';
 import ingamingPreview from '../img/ingaming-preview@2x.jpg';
 import flappyBirdPreview from '../img/flappy-bird-preview@2x.jpg';
 import pongPreview from '../img/pong-preview@2x.jpg';
-import Project from './Project';
-import MiniProject from './MiniProject';
+
+import bookableGif from '../img/bookable.gif';
+import bellonaGif from '../img/bellona.gif';
+import ingamingGif from '../img/ingaming.gif';
+import flappyBirdGif from '../img/flappy-bird.gif';
+import pongGif from '../img/pong.gif';
 
 const projects = [
   {
@@ -23,6 +30,9 @@ const projects = [
     asperiores voluptatem non inventore, earum dicta esse vel,
     reiciendis culpa deleniti aliquam.`,
     previewImg: bookablePreview,
+    gif: bookableGif,
+    sourceCodeLink: 'https://github.com/jlwalkerlg',
+    liveDemoLink: 'https://github.com/jlwalkerlg',
   },
   {
     title: 'Bellona',
@@ -32,6 +42,9 @@ const projects = [
     asperiores voluptatem non inventore, earum dicta esse vel,
     reiciendis culpa deleniti aliquam.`,
     previewImg: bellonaPreview,
+    gif: bellonaGif,
+    sourceCodeLink: 'https://github.com/jlwalkerlg',
+    liveDemoLink: null,
   },
   {
     title: 'inGAMING',
@@ -41,6 +54,9 @@ const projects = [
     asperiores voluptatem non inventore, earum dicta esse vel,
     reiciendis culpa deleniti aliquam.`,
     previewImg: ingamingPreview,
+    gif: ingamingGif,
+    sourceCodeLink: 'https://github.com/jlwalkerlg',
+    liveDemoLink: null,
   },
 ];
 
@@ -50,12 +66,18 @@ const miniProjects = [
     skills: ['JavaScript', 'HTML5 Canvas'],
     description: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam enim ullam a ipsam quae itaque sapiente quasi vero, saepe blanditiis.`,
     previewImg: flappyBirdPreview,
+    gif: flappyBirdGif,
+    sourceCodeLink: 'https://github.com/jlwalkerlg',
+    liveDemoLink: null,
   },
   {
     title: 'Pong',
     skills: ['JavaScript', 'HTML5 Canvas'],
     description: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam enim ullam a ipsam quae itaque sapiente quasi vero, saepe blanditiis.`,
     previewImg: pongPreview,
+    gif: pongGif,
+    sourceCodeLink: 'https://github.com/jlwalkerlg',
+    liveDemoLink: null,
   },
 ];
 
@@ -69,7 +91,11 @@ const Projects = () => {
           {projects.map((project, index) => {
             const reversed = index % 2 !== 0;
             return (
-              <Project key={index} project={project} reversed={reversed} />
+              <Project
+                key={project.title}
+                project={project}
+                reversed={reversed}
+              />
             );
           })}
         </section>
@@ -78,8 +104,8 @@ const Projects = () => {
           <h3 className="text-center my-0">Mini Projects.</h3>
 
           <section className="mini-projects mt-4">
-            {miniProjects.map((project, index) => {
-              return <MiniProject key={index} project={project} />;
+            {miniProjects.map(project => {
+              return <MiniProject key={project.title} project={project} />;
             })}
           </section>
         </section>

@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import SkillGrid from './SkillGrid';
+import ProjectModal from './ProjectModal';
 
-const Project = ({
-  project: { title, skills, description, previewImg },
-  reversed,
-}) => {
+const Project = ({ project, reversed }) => {
+  const { title, skills, description, previewImg } = project;
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <article className={`project${reversed ? ' project--reversed' : ''}`}>
       <div className="project__preview">
@@ -19,10 +23,16 @@ const Project = ({
 
         <SkillGrid skills={skills} />
 
-        <button type="button" className="btn btn--outline mt-4">
-          DEMO
+        <button
+          type="button"
+          className="btn btn--outline mt-4"
+          onClick={openModal}
+        >
+          MORE INFO
         </button>
       </div>
+
+      {isModalOpen && <ProjectModal project={project} onClose={closeModal} />}
     </article>
   );
 };

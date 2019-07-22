@@ -1,0 +1,68 @@
+.project-modal {
+  height: 100%;
+
+  @include xl {
+    display: flex;
+    align-items: flex-start;
+  }
+}
+
+.project-modal__img-wrap {
+  align-self: center;
+  flex: 1;
+  padding: 1rem;
+
+  & > img {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.project-modal__content {
+  padding: 2rem 1rem;
+  text-align: center;
+  flex: 1;
+
+  @include xl {
+    height: 100%;
+    overflow-y: scroll;
+    text-align: left;
+  }
+}
+
+.project-modal__heading {
+  margin: 0;
+  font-weight: $font-weight-bold;
+  font-size: 1.8rem;
+}
+
+.project-modal__description {
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.project-modal__buttons {
+  margin-top: 1.5rem;
+
+  & > .btn {
+    display: block;
+
+    &:last-child {
+      margin-top: 0.8rem;
+    }
+
+    @include sm {
+      display: inline-block;
+
+      margin-left: 0.5rem;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-top: 0;
+      }
+    }
+  }
+}

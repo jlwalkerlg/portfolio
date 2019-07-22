@@ -23,8 +23,12 @@
 @import './components/skill-point';
 @import './components/skill-grid';
 @import './components/footer';
+@import './components/modal';
+@import './components/project-modal';
 
 @import './utilities/spacing';
 @import './utilities/typography';
 @import './utilities/lists';
 @import './utilities/display';
+@import './utilities/no-scroll';
+@import './utilities/sr-only';

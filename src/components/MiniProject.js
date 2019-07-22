@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import SkillPoint from './SkillPoint';
+import ProjectModal from './ProjectModal';
 
-const MiniProject = ({
-  project: { title, skills, description, previewImg },
-}) => {
+const MiniProject = ({ project }) => {
+  const { title, skills, description, previewImg } = project;
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <article className="mini-project card text-center">
       <img className="card__img" src={previewImg} alt={`${title} project`} />
@@ -15,14 +20,20 @@ const MiniProject = ({
         <p className="mt-0">{description}</p>
 
         <div>
-          {skills.map((skill, index) => {
-            return <SkillPoint key={index} skill={skill} />;
+          {skills.map(skill => {
+            return <SkillPoint key={skill} skill={skill} />;
           })}
         </div>
 
-        <button type="button" className="btn btn--outline mt-4">
-          DEMO
+        <button
+          type="button"
+          className="btn btn--outline mt-4"
+          onClick={openModal}
+        >
+          MORE INFO
         </button>
+
+        {isModalOpen && <ProjectModal project={project} onClose={closeModal} />}
       </div>
     </article>
   );
