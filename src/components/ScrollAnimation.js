@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 import Observer from '../utils/observer';
 
 const handler = (element, observer) => {
@@ -27,6 +28,11 @@ const ScrollAnimation = ({ animation, children }) => {
       {children}
     </div>
   );
+};
+
+ScrollAnimation.propTypes = {
+  animation: PropTypes.string.isRequired,
+  children: PropTypes.element.isRequired,
 };
 
 export default ScrollAnimation;
