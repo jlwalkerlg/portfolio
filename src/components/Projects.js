@@ -1,6 +1,7 @@
 import React from 'react';
 import Project from './Project';
 import MiniProject from './MiniProject';
+import ScrollAnimation from './ScrollAnimation';
 
 // TODO: use smaller images for smaller screens.
 import bookablePreview from '../img/bookable-preview@2x.jpg';
@@ -85,7 +86,9 @@ const Projects = () => {
   return (
     <section id="projects" className="projects">
       <div className="container">
-        <h2 className="my-0 text-center">Projects.</h2>
+        <ScrollAnimation animation="fadeInUp">
+          <h2 className="my-0 text-center">Projects.</h2>
+        </ScrollAnimation>
 
         <section>
           {projects.map((project, index) => {
@@ -101,13 +104,17 @@ const Projects = () => {
         </section>
 
         <section className="mt-5">
-          <h3 className="text-center my-0">Mini Projects.</h3>
+          <ScrollAnimation animation="fadeInUp">
+            <h3 className="text-center my-0">Mini Projects.</h3>
+          </ScrollAnimation>
 
-          <section className="mini-projects mt-4">
-            {miniProjects.map(project => {
-              return <MiniProject key={project.title} project={project} />;
-            })}
-          </section>
+          <ScrollAnimation animation="fadeIn delay-500">
+            <section className="mini-projects mt-4">
+              {miniProjects.map(project => {
+                return <MiniProject key={project.title} project={project} />;
+              })}
+            </section>
+          </ScrollAnimation>
         </section>
       </div>
     </section>

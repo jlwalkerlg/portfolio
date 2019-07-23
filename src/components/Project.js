@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import SkillGrid from './SkillGrid';
 import ProjectModal from './ProjectModal';
+import ScrollAnimation from './ScrollAnimation';
 
 const Project = ({ project, reversed }) => {
   const { title, skills, description, previewImg } = project;
@@ -13,23 +14,27 @@ const Project = ({ project, reversed }) => {
   return (
     <article className={`project${reversed ? ' project--reversed' : ''}`}>
       <div className="project__preview">
-        <img src={previewImg} alt={`${title} project`} />
+        <ScrollAnimation animation={reversed ? 'fadeInRight' : 'fadeInLeft'}>
+          <img src={previewImg} alt={`${title} project`} />
+        </ScrollAnimation>
       </div>
 
       <div className="project__content">
-        <h3 className="project__heading">{title}</h3>
+        <ScrollAnimation animation="fadeInUp delay-500">
+          <h3 className="project__heading">{title}</h3>
 
-        <p className="mt-2 text-body">{description}</p>
+          <p className="mt-2 text-body">{description}</p>
 
-        <SkillGrid skills={skills} />
+          <SkillGrid skills={skills} />
 
-        <button
-          type="button"
-          className="btn btn--outline mt-4"
-          onClick={openModal}
-        >
-          MORE INFO
-        </button>
+          <button
+            type="button"
+            className="btn btn--outline mt-4"
+            onClick={openModal}
+          >
+            MORE INFO
+          </button>
+        </ScrollAnimation>
       </div>
 
       {isModalOpen && <ProjectModal project={project} onClose={closeModal} />}

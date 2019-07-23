@@ -24,7 +24,7 @@ const ScrollAnimation = ({ animation, children }) => {
   }, []);
 
   return (
-    <div ref={ref} data-animation={animation}>
+    <div ref={ref} data-animation={animation} className="animatable">
       {children}
     </div>
   );
@@ -32,7 +32,10 @@ const ScrollAnimation = ({ animation, children }) => {
 
 ScrollAnimation.propTypes = {
   animation: PropTypes.string.isRequired,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.element.isRequired,
+    PropTypes.arrayOf(PropTypes.element.isRequired).isRequired,
+  ]).isRequired,
 };
 
 export default ScrollAnimation;
