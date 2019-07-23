@@ -3,7 +3,7 @@ import throttle from '../throttle';
 class Observer {
   constructor(handler) {
     this.handler = handler;
-    this.listener = null;
+    this.listening = false;
     this.elements = [];
     this.handleScroll = throttle(this.handleScroll.bind(this), 50);
   }
@@ -12,9 +12,9 @@ class Observer {
     // Add element to elements array.
     this.elements.push(element);
 
-    // Add listener if not already set.
-    if (!this.listener) {
-      this.listener = document.addEventListener('scroll', this.handleScroll);
+    // Add listeners if not already set.
+    if (!this.listening) {
+      this.addListeners();
     }
 
     // Immediately check element position.
@@ -25,10 +25,24 @@ class Observer {
     // Remove element from elements array.
     this.elements = this.elements.filter(el => el !== element);
 
-    // Remove event listener if no elements are left to observe.
+    // Remove event listeners if no elements are left to observe.
     if (!this.elements.length) {
-      document.removeEventListener('scroll', this.handleScroll);
+      this.removeListeners();
     }
+  }
+
+  addListeners() {
+    document.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('resize', this.handleScroll);
+    window.addEventListener('orientationchange', this.handleScroll);
+    this.listening = true;
+  }
+
+  removeListeners() {
+    document.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('resize', this.handleScroll);
+    window.removeEventListener('orientationchange', this.handleScroll);
+    this.listening = false;
   }
 
   handleScroll() {
