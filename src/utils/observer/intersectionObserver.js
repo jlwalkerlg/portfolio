@@ -12,11 +12,11 @@ class Observer {
     this.observer.unobserve(element);
   }
 
-  handleScroll(entries, observer) {
+  handleScroll(entries) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const element = entry.target;
-        this.handler(element, observer);
+        this.handler(element, this);
       }
     });
   }
