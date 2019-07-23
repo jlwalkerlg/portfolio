@@ -21,5 +21,6 @@ module.exports = {
     'react/jsx-filename-extension': 'off',
     'prettier/prettier': 'error',
     'react/no-array-index-key': 'off',
+    'class-methods-use-this': 'off',
   },
 };

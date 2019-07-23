@@ -47,7 +47,9 @@ class Observer {
 
   handleScroll() {
     this.elements.forEach(element => {
-      this.checkElement(element);
+      if (this.checkElement(element)) {
+        this.handler(element, this);
+      }
     });
   }
 
@@ -58,8 +60,10 @@ class Observer {
       elementPosition.top <= window.innerHeight &&
       elementPosition.bottom >= 0
     ) {
-      this.handler(element, this);
+      return true;
     }
+
+    return false;
   }
 }
 
