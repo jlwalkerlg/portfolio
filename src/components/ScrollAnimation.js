@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import Observer from '../utils/observer';
 
 const handler = (element, observer) => {
-  const { animation } = element.dataset;
-  element.classList.add('animated', ...animation.split(' '));
+  element.classList.add('animated');
   observer.unobserve(element);
 };
 
@@ -24,7 +23,7 @@ const ScrollAnimation = ({ animation, children }) => {
   }, []);
 
   return (
-    <div ref={ref} data-animation={animation} className="animatable">
+    <div ref={ref} className={`animatable ${animation}`}>
       {children}
     </div>
   );
