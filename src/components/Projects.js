@@ -4,11 +4,16 @@ import MiniProject from './MiniProject';
 import ScrollAnimation from './ScrollAnimation';
 
 // TODO: use smaller images for smaller screens.
-import bookablePreview from '../img/bookable-preview@2x.jpg';
-import bellonaPreview from '../img/bellona-preview@2x.jpg';
-import ingamingPreview from '../img/ingaming-preview@2x.jpg';
-import flappyBirdPreview from '../img/flappy-bird-preview@2x.jpg';
-import pongPreview from '../img/pong-preview@2x.jpg';
+import bookablePreview from '../img/bookable-preview.jpg';
+import bookablePreviewLg from '../img/bookable-preview@2x.jpg';
+import bellonaPreview from '../img/bellona-preview.jpg';
+import bellonaPreviewLg from '../img/bellona-preview@2x.jpg';
+import ingamingPreview from '../img/ingaming-preview.jpg';
+import ingamingPreviewLg from '../img/ingaming-preview@2x.jpg';
+import flappyBirdPreview from '../img/flappy-bird-preview.jpg';
+import flappyBirdPreviewLg from '../img/flappy-bird-preview@2x.jpg';
+import pongPreview from '../img/pong-preview.jpg';
+import pongPreviewLg from '../img/pong-preview@2x.jpg';
 
 import bookableGif from '../img/bookable.gif';
 import bellonaGif from '../img/bellona.gif';
@@ -31,6 +36,7 @@ const projects = [
     asperiores voluptatem non inventore, earum dicta esse vel,
     reiciendis culpa deleniti aliquam.`,
     previewImg: bookablePreview,
+    previewImgLg: bookablePreviewLg,
     gif: bookableGif,
     sourceCodeLink: 'https://github.com/jlwalkerlg',
     liveDemoLink: 'https://github.com/jlwalkerlg',
@@ -43,6 +49,7 @@ const projects = [
     asperiores voluptatem non inventore, earum dicta esse vel,
     reiciendis culpa deleniti aliquam.`,
     previewImg: bellonaPreview,
+    previewImgLg: bellonaPreviewLg,
     gif: bellonaGif,
     sourceCodeLink: 'https://github.com/jlwalkerlg',
     liveDemoLink: null,
@@ -55,6 +62,7 @@ const projects = [
     asperiores voluptatem non inventore, earum dicta esse vel,
     reiciendis culpa deleniti aliquam.`,
     previewImg: ingamingPreview,
+    previewImgLg: ingamingPreviewLg,
     gif: ingamingGif,
     sourceCodeLink: 'https://github.com/jlwalkerlg',
     liveDemoLink: null,
@@ -67,6 +75,7 @@ const miniProjects = [
     skills: ['JavaScript', 'HTML5 Canvas'],
     description: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam enim ullam a ipsam quae itaque sapiente quasi vero, saepe blanditiis.`,
     previewImg: flappyBirdPreview,
+    previewImgLg: flappyBirdPreviewLg,
     gif: flappyBirdGif,
     sourceCodeLink: 'https://github.com/jlwalkerlg',
     liveDemoLink: null,
@@ -76,6 +85,7 @@ const miniProjects = [
     skills: ['JavaScript', 'HTML5 Canvas'],
     description: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam enim ullam a ipsam quae itaque sapiente quasi vero, saepe blanditiis.`,
     previewImg: pongPreview,
+    previewImgLg: pongPreviewLg,
     gif: pongGif,
     sourceCodeLink: 'https://github.com/jlwalkerlg',
     liveDemoLink: null,

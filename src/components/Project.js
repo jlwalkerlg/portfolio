@@ -5,7 +5,7 @@ import ProjectModal from './ProjectModal';
 import ScrollAnimation from './ScrollAnimation';
 
 const Project = ({ project, reversed }) => {
-  const { title, skills, description, previewImg } = project;
+  const { title, skills, description, previewImg, previewImgLg } = project;
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => setIsModalOpen(true);
@@ -15,7 +15,12 @@ const Project = ({ project, reversed }) => {
     <article className={`project${reversed ? ' project--reversed' : ''}`}>
       <div className="project__preview">
         <ScrollAnimation animation={reversed ? 'fadeInRight' : 'fadeInLeft'}>
-          <img src={previewImg} alt={`${title} project`} />
+          <img
+            srcSet={`${previewImg} 385w, ${previewImgLg} 769w`}
+            sizes="(min-width: 1200px) 449px, (min-width: 992px) 374px, (min-width: 768) 274px, (min-width: 330px) 300px, 100vw"
+            src={previewImg}
+            alt={`${title} project`}
+          />
         </ScrollAnimation>
       </div>
 
@@ -52,6 +57,7 @@ Project.propTypes = {
     skills: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
     description: PropTypes.string.isRequired,
     previewImg: PropTypes.string.isRequired,
+    previewImgLg: PropTypes.string.isRequired,
   }).isRequired,
   reversed: PropTypes.bool,
 };

@@ -4,7 +4,7 @@ import SkillPoint from './SkillPoint';
 import ProjectModal from './ProjectModal';
 
 const MiniProject = ({ project }) => {
-  const { title, skills, description, previewImg } = project;
+  const { title, skills, description, previewImg, previewImgLg } = project;
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const openModal = () => setIsModalOpen(true);
@@ -12,7 +12,13 @@ const MiniProject = ({ project }) => {
 
   return (
     <article className="mini-project card text-center">
-      <img className="card__img" src={previewImg} alt={`${title} project`} />
+      <img
+        className="card__img"
+        srcSet={`${previewImg} 384w, ${previewImgLg} 768w`}
+        sizes="(min-width: 344px) 250px, 80vw"
+        src={previewImg}
+        alt={`${title} project`}
+      />
 
       <div className="card__content">
         <h4 className="card__heading">{title}</h4>
@@ -45,6 +51,7 @@ MiniProject.propTypes = {
     skills: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
     description: PropTypes.string.isRequired,
     previewImg: PropTypes.string.isRequired,
+    previewImgLg: PropTypes.string.isRequired,
   }).isRequired,
 };
 
