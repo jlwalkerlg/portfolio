@@ -1,4 +1,5 @@
 import React from 'react';
+import CV from '../assets/cv.pdf';
 
 const Footer = () => {
   return (
@@ -9,13 +10,21 @@ const Footer = () => {
 
           <ul className="list-unstyled">
             <li className="my-0">
-              <a href="https://github.com" className="link link--light">
+              <a
+                href="https://github.com/jlwalkerlg"
+                className="link link--light"
+                target="__blank"
+              >
                 GitHub
               </a>
             </li>
 
             <li className="my-0">
-              <a href="https://linkedin.com" className="link link--light">
+              <a
+                href="https://linkedin.com/in/jlwalkerlg"
+                className="link link--light"
+                target="__blank"
+              >
                 LinkedIn
               </a>
             </li>
@@ -40,9 +49,9 @@ const Footer = () => {
         <div className="footer__list ml-auto">
           <p className="text-bold my-0">Download.</p>
 
-          <button type="button" className="btn btn--light">
+          <a href={CV} className="btn btn--light" target="__blank">
             DOWNLOAD C.V.
-          </button>
+          </a>
         </div>
       </div>
     </footer>

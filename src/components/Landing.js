@@ -4,6 +4,7 @@ import ScrollAnimation from './ScrollAnimation';
 import { ReactComponent as GitHubLogo } from '../img/github.svg';
 import { ReactComponent as LinkedInLogo } from '../img/linkedin.svg';
 import { ReactComponent as LaravelReactSvg } from '../img/laravel-react.svg';
+import CV from '../assets/cv.pdf';
 
 const Landing = () => {
   return (
@@ -22,22 +23,33 @@ const Landing = () => {
 
           <ScrollAnimation animation="fadeInDown delay-500">
             <div className="landing__buttons mt-4">
-              <button type="button" className="btn btn--outline">
+              <a href={CV} className="btn btn--outline" target="__blank">
                 DOWNLOAD C.V.
-              </button>
+              </a>
 
-              <button type="button" className="btn btn--primary">
+              <a
+                href="mailto:walker.jlg@gmail.com"
+                className="btn btn--primary"
+              >
                 CONTACT ME
-              </button>
+              </a>
             </div>
           </ScrollAnimation>
 
           <ScrollAnimation animation="fadeInUp delay-1000">
             <div className="landing__contact">
-              <a href="https://github.com" className="icon-wrap mx-2">
+              <a
+                href="https://github.com/jlwalkerlg"
+                className="icon-wrap mx-2"
+                target="__blank"
+              >
                 <GitHubLogo className="icon" />
               </a>
-              <a href="https://linkedin.com" className="icon-wrap mx-2">
+              <a
+                href="https://linkedin.com/in/jlwalkerlg"
+                className="icon-wrap mx-2"
+                target="__blank"
+              >
                 <LinkedInLogo className="icon" />
               </a>
               <a

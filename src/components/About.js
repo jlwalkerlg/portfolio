@@ -1,6 +1,7 @@
 import React from 'react';
 import ScrollAnimation from './ScrollAnimation';
 import { ReactComponent as CodingSvg } from '../img/undraw_coding_6mjf.svg';
+import CV from '../assets/cv.pdf';
 
 const About = () => {
   return (
@@ -24,7 +25,11 @@ const About = () => {
               iure animi! Tempora aliquid suscipit optio a consequatur sint.
             </p>
 
-            <div className="btn btn--primary mt-4">DOWNLOAD C.V.</div>
+            <div className="mt-4">
+              <a href={CV} className="btn btn--primary" target="__blank">
+                DOWNLOAD C.V.
+              </a>
+            </div>
           </ScrollAnimation>
         </div>
       </div>
