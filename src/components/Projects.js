@@ -25,13 +25,13 @@ const Projects = ({ projects, miniProjects }) => {
           })}
         </section>
 
-        <section className="mt-5">
+        <section className="mini-projects">
           <ScrollAnimation animation="fadeIn">
             <h3 className="text-center my-0">Mini Projects.</h3>
           </ScrollAnimation>
 
           <ScrollAnimation animation="fadeIn delay-500">
-            <section className="mini-projects mt-4">
+            <section className="mini-projects__projects mt-4">
               {miniProjects.map(project => {
                 return <MiniProject key={project.title} project={project} />;
               })}
