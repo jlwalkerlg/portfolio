@@ -29,7 +29,7 @@ const About = () => {
               continually improving my skills in these languages as well as
               picking up new and exciting technologies along the way, with{' '}
               <strong>WordPress</strong> and <strong>GraphQL</strong> currently
-              at the top of my list.
+              at the top of the list.
             </p>
 
             <div className="mt-4">
