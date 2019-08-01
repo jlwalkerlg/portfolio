@@ -1,27 +1,21 @@
 .landing {
   position: relative;
 
-  background: url('../img/Ellipse\ 14.svg') right -400px top -400px / 585px
-    585px no-repeat;
+  &::before {
+    content: '';
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 60%;
+    z-index: -1;
+    background: url('../img/landing-bg.svg') left bottom / cover no-repeat;
+    opacity: 1;
 
-  @include bp(403px) {
-    background: url('../img/Ellipse\ 14.svg') right -350px top -450px / 600px
-      600px no-repeat;
-  }
-
-  @include bp(576px) {
-    background: url('../img/Ellipse\ 14.svg') right -400px top -450px / 680px
-      680px no-repeat;
-  }
-
-  @include bp(720px) {
-    background: url('../img/Ellipse\ 14.svg') right -400px top -450px / 700px
-      700px no-repeat;
-  }
-
-  @include md {
-    background: url('../img/Ellipse\ 14.svg') right -400px top -400px / 800px
-      800px no-repeat;
+    @include md {
+      display: block;
+    }
   }
 
   @include lg {

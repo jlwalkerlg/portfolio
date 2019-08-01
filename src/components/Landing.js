@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar';
 import ScrollAnimation from './ScrollAnimation';
+
 import { ReactComponent as GitHubLogo } from '../img/github.svg';
 import { ReactComponent as LinkedInLogo } from '../img/linkedin.svg';
 import { ReactComponent as LaravelReactSvg } from '../img/laravel-react.svg';

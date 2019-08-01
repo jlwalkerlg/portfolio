@@ -13,4 +13,18 @@
 
 .nav__item {
   margin-left: 1rem;
+
+  > .link {
+    color: $primary;
+    &:hover {
+      color: darken($primary, 10%);
+    }
+
+    @include md {
+      color: $light;
+      &:hover {
+        color: darken($light, 10%);
+      }
+    }
+  }
 }
