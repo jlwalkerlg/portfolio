@@ -8,7 +8,7 @@ const handler = (element, observer) => {
 };
 
 const options = {
-  rootMargin: -150,
+  rootMargin: -50,
 };
 
 const observer = new Observer(handler, options);
