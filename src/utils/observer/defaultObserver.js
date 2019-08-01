@@ -1,8 +1,9 @@
 import throttle from '../throttle';
 
 class Observer {
-  constructor(handler) {
+  constructor(handler, { rootMargin }) {
     this.handler = handler;
+    this.rootMargin = rootMargin;
     this.listening = false;
     this.elements = [];
     this.handleScroll = throttle(this.handleScroll.bind(this), 50);
@@ -54,11 +55,13 @@ class Observer {
   }
 
   checkElement(element) {
-    const elementPosition = element.getBoundingClientRect();
+    const { top: elTop, bottom: elBottom } = element.getBoundingClientRect();
+    const rootTop = -this.rootMargin;
+    const rootBottom = window.innerHeight + this.rootMargin;
 
     if (
-      elementPosition.top <= window.innerHeight &&
-      elementPosition.bottom >= 0
+      (elTop >= rootTop && elTop <= rootBottom) ||
+      (elBottom >= rootTop && elBottom <= rootBottom)
     ) {
       return true;
     }

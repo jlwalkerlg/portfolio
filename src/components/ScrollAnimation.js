@@ -7,7 +7,11 @@ const handler = (element, observer) => {
   observer.unobserve(element);
 };
 
-const observer = new Observer(handler);
+const options = {
+  rootMargin: -150,
+};
+
+const observer = new Observer(handler, options);
 
 const ScrollAnimation = ({ animation, children }) => {
   const ref = useRef(null);

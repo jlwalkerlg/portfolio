@@ -1,7 +1,15 @@
 class Observer {
-  constructor(handler) {
+  constructor(handler, { rootMargin }) {
     this.handler = handler;
-    this.observer = new IntersectionObserver(this.handleScroll.bind(this));
+
+    const options = {
+      rootMargin: `${rootMargin}px 0px`,
+    };
+
+    this.observer = new IntersectionObserver(
+      this.handleScroll.bind(this),
+      options
+    );
   }
 
   observe(element) {
