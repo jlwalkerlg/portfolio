@@ -1,7 +1,7 @@
 import React from 'react';
 import Landing from './Landing';
 import About from './About';
-import Projects from './Projects';
+import ProjectsContainer from './ProjectsContainer';
 import Footer from './Footer';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <>
       <Landing />
       <About />
-      <Projects />
+      <ProjectsContainer />
       <Footer />
     </>
   );

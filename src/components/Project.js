@@ -56,6 +56,7 @@ Project.propTypes = {
     title: PropTypes.string.isRequired,
     skills: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
     description: PropTypes.string.isRequired,
+    about: PropTypes.element.isRequired,
     previewImg: PropTypes.string.isRequired,
     previewImgLg: PropTypes.string.isRequired,
   }).isRequired,

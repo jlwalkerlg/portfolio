@@ -17,12 +17,19 @@ const About = () => {
             <h2 className="my-0">About Me.</h2>
 
             <p className="text-body mt-3 mb-0">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil,
-              incidunt. Consequatur pariatur cupiditate, reprehenderit eligendi,
-              vel ipsum nemo delectus, atque quam optio commodi! Enim obcaecati
-              ducimus atque repellendus repellat saepe expedita voluptates
-              numquam sint consectetur cum, quibusdam vero nam dolore? Magnam,
-              iure animi! Tempora aliquid suscipit optio a consequatur sint.
+              I&apos;m a <strong>full-stack web developer</strong> with a{' '}
+              <strong>passion for learning</strong> new technologies and
+              programming. I was introduced to <strong>Python</strong> while
+              studying Astrophysics and Applied Mathematics at University and
+              have since taught myself a host of web technologies including{' '}
+              <strong>HTML5</strong>, <strong>CSS3</strong>,{' '}
+              <strong>SASS</strong>, <strong>JavaScript</strong>,{' '}
+              <strong>PHP</strong>, <strong>Laravel</strong>,{' '}
+              <strong>React</strong>, and <strong>Docker</strong>. I plan on
+              continually improving my skills in these languages as well as
+              picking up new and exciting technologies along the way, with{' '}
+              <strong>WordPress</strong> and <strong>GraphQL</strong> currently
+              at the top of my list.
             </p>
 
             <div className="mt-4">

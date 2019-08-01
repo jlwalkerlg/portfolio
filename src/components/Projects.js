@@ -1,98 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Project from './Project';
 import MiniProject from './MiniProject';
 import ScrollAnimation from './ScrollAnimation';
 
-// TODO: use smaller images for smaller screens.
-import bookablePreview from '../img/bookable-preview.jpg';
-import bookablePreviewLg from '../img/bookable-preview@2x.jpg';
-import bellonaPreview from '../img/bellona-preview.jpg';
-import bellonaPreviewLg from '../img/bellona-preview@2x.jpg';
-import ingamingPreview from '../img/ingaming-preview.jpg';
-import ingamingPreviewLg from '../img/ingaming-preview@2x.jpg';
-import flappyBirdPreview from '../img/flappy-bird-preview.jpg';
-import flappyBirdPreviewLg from '../img/flappy-bird-preview@2x.jpg';
-import pongPreview from '../img/pong-preview.jpg';
-import pongPreviewLg from '../img/pong-preview@2x.jpg';
-
-import bookableGif from '../img/bookable.gif';
-import bellonaGif from '../img/bellona.gif';
-import ingamingGif from '../img/ingaming.gif';
-import flappyBirdGif from '../img/flappy-bird.gif';
-import pongGif from '../img/pong.gif';
-
-const projects = [
-  {
-    title: 'Bookable',
-    skills: [
-      'React | Redux',
-      'Laravel | PHP',
-      'MySQL',
-      'CSS | SASS',
-      'Bootstrap',
-    ],
-    description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab
-    maiores mollitia nihil nobis eveniet placeat saepe dolore ipsa
-    asperiores voluptatem non inventore, earum dicta esse vel,
-    reiciendis culpa deleniti aliquam.`,
-    previewImg: bookablePreview,
-    previewImgLg: bookablePreviewLg,
-    gif: bookableGif,
-    sourceCodeLink: 'https://github.com/jlwalkerlg',
-    liveDemoLink: 'https://github.com/jlwalkerlg',
-  },
-  {
-    title: 'Bellona',
-    skills: ['PHP', 'MySQL'],
-    description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab
-    maiores mollitia nihil nobis eveniet placeat saepe dolore ipsa
-    asperiores voluptatem non inventore, earum dicta esse vel,
-    reiciendis culpa deleniti aliquam.`,
-    previewImg: bellonaPreview,
-    previewImgLg: bellonaPreviewLg,
-    gif: bellonaGif,
-    sourceCodeLink: 'https://github.com/jlwalkerlg',
-    liveDemoLink: null,
-  },
-  {
-    title: 'inGAMING',
-    skills: ['Bellona | PHP', 'MySQL', 'JavaScript', 'CSS | SASS'],
-    description: `Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab
-    maiores mollitia nihil nobis eveniet placeat saepe dolore ipsa
-    asperiores voluptatem non inventore, earum dicta esse vel,
-    reiciendis culpa deleniti aliquam.`,
-    previewImg: ingamingPreview,
-    previewImgLg: ingamingPreviewLg,
-    gif: ingamingGif,
-    sourceCodeLink: 'https://github.com/jlwalkerlg',
-    liveDemoLink: null,
-  },
-];
-
-const miniProjects = [
-  {
-    title: 'Flappy Bird',
-    skills: ['JavaScript', 'HTML5 Canvas'],
-    description: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam enim ullam a ipsam quae itaque sapiente quasi vero, saepe blanditiis.`,
-    previewImg: flappyBirdPreview,
-    previewImgLg: flappyBirdPreviewLg,
-    gif: flappyBirdGif,
-    sourceCodeLink: 'https://github.com/jlwalkerlg',
-    liveDemoLink: null,
-  },
-  {
-    title: 'Pong',
-    skills: ['JavaScript', 'HTML5 Canvas'],
-    description: `Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam enim ullam a ipsam quae itaque sapiente quasi vero, saepe blanditiis.`,
-    previewImg: pongPreview,
-    previewImgLg: pongPreviewLg,
-    gif: pongGif,
-    sourceCodeLink: 'https://github.com/jlwalkerlg',
-    liveDemoLink: null,
-  },
-];
-
-const Projects = () => {
+const Projects = ({ projects, miniProjects }) => {
   return (
     <section id="projects" className="projects">
       <div className="container">
@@ -129,6 +41,29 @@ const Projects = () => {
       </div>
     </section>
   );
+};
+
+Projects.propTypes = {
+  projects: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      skills: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+      description: PropTypes.string.isRequired,
+      about: PropTypes.element.isRequired,
+      previewImg: PropTypes.string.isRequired,
+      previewImgLg: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
+  miniProjects: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      skills: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+      description: PropTypes.string.isRequired,
+      about: PropTypes.element.isRequired,
+      previewImg: PropTypes.string.isRequired,
+      previewImgLg: PropTypes.string.isRequired,
+    }).isRequired
+  ).isRequired,
 };
 
 export default Projects;

@@ -20,12 +20,12 @@ const MiniProject = ({ project }) => {
         alt={`${title} project`}
       />
 
-      <div className="card__content">
+      <div className="card__content mini-project__content">
         <h4 className="card__heading">{title}</h4>
 
         <p className="mt-0">{description}</p>
 
-        <div>
+        <div className="mini-project__skills">
           {skills.map(skill => {
             return <SkillPoint key={skill} skill={skill} />;
           })}
