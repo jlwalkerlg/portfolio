@@ -6,7 +6,7 @@ class Observer {
     this.defaultRootMargin = 0;
     this.listening = false;
     this.elements = [];
-    this.handleScroll = throttle(this.handleScroll.bind(this), 50);
+    this.handleScroll = throttle(this.handleScroll.bind(this), 150);
   }
 
   observe(element, { rootMargin }) {
