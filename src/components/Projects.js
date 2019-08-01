@@ -26,7 +26,7 @@ const Projects = ({ projects, miniProjects }) => {
         </section>
 
         <section className="mt-5">
-          <ScrollAnimation animation="fadeInUp">
+          <ScrollAnimation animation="fadeIn">
             <h3 className="text-center my-0">Mini Projects.</h3>
           </ScrollAnimation>
 
