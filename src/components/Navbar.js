@@ -6,7 +6,9 @@ const Navbar = () => {
       <div className="container">
         <div className="nav__logo">
           <a href="#landing" className="link-plain">
-            <span className="logo">Jordan Walker</span>
+            <span className="logo" aria-label="logo">
+              JL
+            </span>
           </a>
         </div>
 

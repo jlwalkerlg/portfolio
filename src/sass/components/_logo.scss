@@ -1,18 +1,5 @@
 .logo {
-  position: relative;
   color: $primary;
-  font-weight: $font-weight-bold;
-  text-transform: uppercase;
-
-  &::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: -3px;
-    right: -15px;
-    width: 5px;
-    height: 5px;
-    background: $primary;
-    border-radius: 50%;
-  }
+  font-family: 'Parisienne', cursive;
+  font-size: 1.5rem;
 }
