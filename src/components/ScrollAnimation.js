@@ -7,24 +7,20 @@ const handler = (element, observer) => {
   observer.unobserve(element);
 };
 
-const options = {
-  rootMargin: -50,
-};
+const observer = new Observer(handler);
 
-const observer = new Observer(handler, options);
-
-const ScrollAnimation = ({ animation, children }) => {
+const ScrollAnimation = ({ animation, rootMargin, children }) => {
   const ref = useRef(null);
 
   useEffect(() => {
     const element = ref.current;
 
-    observer.observe(element);
+    observer.observe(element, { rootMargin });
 
     return () => {
       observer.unobserve(element);
     };
-  }, []);
+  }, [rootMargin]);
 
   return (
     <div ref={ref} className={`animatable ${animation}`}>
@@ -33,8 +29,13 @@ const ScrollAnimation = ({ animation, children }) => {
   );
 };
 
+ScrollAnimation.defaultProps = {
+  rootMargin: -150,
+};
+
 ScrollAnimation.propTypes = {
   animation: PropTypes.string.isRequired,
+  rootMargin: PropTypes.number,
   children: PropTypes.oneOfType([
     PropTypes.element.isRequired,
     PropTypes.arrayOf(PropTypes.element.isRequired).isRequired,

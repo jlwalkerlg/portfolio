@@ -1,15 +1,18 @@
 import throttle from '../throttle';
 
 class Observer {
-  constructor(handler, { rootMargin }) {
+  constructor(handler) {
     this.handler = handler;
-    this.rootMargin = rootMargin;
+    this.defaultRootMargin = 0;
     this.listening = false;
     this.elements = [];
     this.handleScroll = throttle(this.handleScroll.bind(this), 50);
   }
 
-  observe(element) {
+  observe(element, { rootMargin }) {
+    // eslint-disable-next-line no-param-reassign
+    element.dataset.rootMargin = +rootMargin || this.defaultRootMargin;
+
     // Add element to elements array.
     this.elements.push(element);
 
@@ -19,7 +22,9 @@ class Observer {
     }
 
     // Immediately check element position.
-    this.checkElement(element);
+    if (this.isIntersecting(element)) {
+      this.handler(element, this);
+    }
   }
 
   unobserve(element) {
@@ -48,16 +53,17 @@ class Observer {
 
   handleScroll() {
     this.elements.forEach(element => {
-      if (this.checkElement(element)) {
+      if (this.isIntersecting(element)) {
         this.handler(element, this);
       }
     });
   }
 
-  checkElement(element) {
+  isIntersecting(element) {
+    const rootMargin = +element.dataset.rootMargin || this.defaultRootMargin;
     const { top: elTop, bottom: elBottom } = element.getBoundingClientRect();
-    const rootTop = -this.rootMargin;
-    const rootBottom = window.innerHeight + this.rootMargin;
+    const rootTop = -rootMargin;
+    const rootBottom = window.innerHeight + rootMargin;
 
     if (
       (elTop >= rootTop && elTop <= rootBottom) ||

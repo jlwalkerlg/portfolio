@@ -1,23 +1,33 @@
 class Observer {
-  constructor(handler, { rootMargin }) {
+  constructor(handler) {
     this.handler = handler;
+    this.defaultRootMargin = 0;
+    this.observers = [];
+  }
+
+  observe(element, { rootMargin }) {
+    // eslint-disable-next-line no-param-reassign
+    element.dataset.observerId = this.observers.length;
 
     const options = {
-      rootMargin: `${rootMargin}px 0px`,
+      rootMargin: `${+rootMargin || this.defaultRootMargin}px 0px`,
     };
 
-    this.observer = new IntersectionObserver(
+    const observer = new IntersectionObserver(
       this.handleScroll.bind(this),
       options
     );
-  }
 
-  observe(element) {
-    this.observer.observe(element);
+    observer.observe(element);
+
+    this.observers.push(observer);
   }
 
   unobserve(element) {
-    this.observer.unobserve(element);
+    const { observerId } = element.dataset;
+    const observer = this.observers[observerId];
+    observer.unobserve(element);
+    this.observers[observerId] = null;
   }
 
   handleScroll(entries) {
