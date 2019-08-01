@@ -14,7 +14,7 @@ const Landing = () => {
 
       <div className="landing__container container">
         <div className="landing__left">
-          <ScrollAnimation animation="fadeInDown">
+          <ScrollAnimation animation="fadeInDown" rootMargin={0}>
             <h1 className="mt-0 mb-0">Jordan Walker</h1>
 
             <p className="landing__subheading mt-2 mt-md-0">
@@ -22,7 +22,7 @@ const Landing = () => {
             </p>
           </ScrollAnimation>
 
-          <ScrollAnimation animation="fadeInDown delay-500">
+          <ScrollAnimation animation="fadeInDown delay-500" rootMargin={0}>
             <div className="landing__buttons mt-4">
               <a href={CV} className="btn btn--outline" target="__blank">
                 DOWNLOAD C.V.
@@ -37,7 +37,7 @@ const Landing = () => {
             </div>
           </ScrollAnimation>
 
-          <ScrollAnimation animation="fadeInUp delay-1000">
+          <ScrollAnimation animation="fadeInUp delay-1000" rootMargin={0}>
             <div className="landing__contact">
               <a
                 href="https://github.com/jlwalkerlg"
@@ -64,7 +64,7 @@ const Landing = () => {
         </div>
 
         <div className="landing__right">
-          <ScrollAnimation animation="fadeInRight delay-1500">
+          <ScrollAnimation animation="fadeInRight delay-1500" rootMargin={0}>
             <LaravelReactSvg width="100%" height="100%" />
           </ScrollAnimation>
         </div>
