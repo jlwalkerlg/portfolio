@@ -4,7 +4,9 @@
   margin-top: 1rem;
 
   @include md {
-    margin: 0rem 0rem 100px;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
     text-align: left;
   }
 }
