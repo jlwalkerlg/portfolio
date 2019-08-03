@@ -58,7 +58,7 @@ const projects = [
     previewImgLg: bookablePreviewLg,
     gif: bookableGif,
     sourceCodeLink: 'https://github.com/jlwalkerlg/bookable',
-    liveDemoLink: 'http://bookable.walkerjordan.com',
+    liveDemoLink: 'https://bookable.walkerjordan.com',
   },
   {
     title: 'Bellona',
@@ -138,7 +138,7 @@ const projects = [
     previewImgLg: ingamingPreviewLg,
     gif: ingamingGif,
     sourceCodeLink: 'https://github.com/jlwalkerlg/ingaming',
-    liveDemoLink: 'http://ingaming.walkerjordan.com',
+    liveDemoLink: 'https://ingaming.walkerjordan.com',
   },
 ];
 
