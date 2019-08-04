@@ -112,10 +112,6 @@ const Modal = ({ children, label, onClose }) => {
         />
 
         <div className="modal__container">{children}</div>
-
-        <button type="button" className="modal__close" onClick={onClose}>
-          <span className="sr-only">Close Modal</span>
-        </button>
       </div>
     </Portal>
   );
