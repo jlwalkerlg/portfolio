@@ -13,7 +13,8 @@ const Footer = () => {
               <a
                 href="https://github.com/jlwalkerlg"
                 className="link link--light"
-                target="__blank"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 GitHub
               </a>
@@ -23,7 +24,8 @@ const Footer = () => {
               <a
                 href="https://linkedin.com/in/jlwalkerlg"
                 className="link link--light"
-                target="__blank"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 LinkedIn
               </a>
@@ -49,7 +51,12 @@ const Footer = () => {
         <div className="footer__list ml-auto">
           <p className="text-bold my-0">Download.</p>
 
-          <a href={CV} className="btn btn--light" target="__blank">
+          <a
+            href={CV}
+            className="btn btn--light"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             DOWNLOAD C.V.
           </a>
         </div>

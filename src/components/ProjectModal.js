@@ -26,7 +26,8 @@ const ProjectModal = ({ project, onClose }) => {
                 <a
                   href={liveDemoLink}
                   className="btn btn--primary"
-                  target="__blank"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <span className="btn__span">Live Demo</span>
                   <OpenIcon className="btn__icon" />
@@ -37,7 +38,8 @@ const ProjectModal = ({ project, onClose }) => {
                 <a
                   href={sourceCodeLink}
                   className="btn btn--outline"
-                  target="__blank"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <span className="btn__span">Source Code</span>
                   <CodeIcon className="btn__icon" />

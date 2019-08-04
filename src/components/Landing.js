@@ -24,7 +24,12 @@ const Landing = () => {
 
           <ScrollAnimation animation="fadeInDown delay-500" rootMargin={0}>
             <div className="landing__buttons mt-4">
-              <a href={CV} className="btn btn--outline" target="__blank">
+              <a
+                href={CV}
+                className="btn btn--outline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 DOWNLOAD C.V.
               </a>
 
@@ -42,14 +47,16 @@ const Landing = () => {
               <a
                 href="https://github.com/jlwalkerlg"
                 className="icon-wrap mx-2"
-                target="__blank"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <GitHubLogo className="icon" />
               </a>
               <a
                 href="https://linkedin.com/in/jlwalkerlg"
                 className="icon-wrap mx-2"
-                target="__blank"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <LinkedInLogo className="icon" />
               </a>

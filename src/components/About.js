@@ -33,7 +33,12 @@ const About = () => {
             </p>
 
             <div className="mt-4">
-              <a href={CV} className="btn btn--primary" target="__blank">
+              <a
+                href={CV}
+                className="btn btn--primary"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 DOWNLOAD C.V.
               </a>
             </div>
