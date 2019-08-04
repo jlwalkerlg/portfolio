@@ -1,19 +1,13 @@
+/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import Portal from './Portal';
 
 const Modal = ({ children, label, onClose }) => {
   const modalRef = useRef(null);
-  const modalOverlayRef = useRef(null);
+  const modalContainerRef = useRef(null);
 
   const initiator = document.activeElement;
-
-  const handleOverlayKeyDown = e => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      onClose(e);
-    }
-  };
 
   const handleDocumentKeyDown = e => {
     if (e.key === 'Escape') {
@@ -25,7 +19,7 @@ const Modal = ({ children, label, onClose }) => {
   const handleRootKeyDown = e => {
     e.preventDefault();
     initiator.focus();
-    modalOverlayRef.current.focus();
+    modalContainerRef.current.focus();
   };
 
   // Make app root un-tabbable.
@@ -49,8 +43,8 @@ const Modal = ({ children, label, onClose }) => {
     return () => document.body.classList.remove('no-scroll');
   });
 
-  // Focus modal overlay.
-  useEffect(() => modalOverlayRef.current.focus());
+  // Focus modal container.
+  useEffect(() => modalContainerRef.current.focus());
 
   // Cycle focus.
   useEffect(() => {
@@ -102,16 +96,11 @@ const Modal = ({ children, label, onClose }) => {
         aria-modal="true"
         role="dialog"
       >
-        <div
-          role="button"
-          tabIndex="0"
-          className="modal__overlay"
-          onClick={onClose}
-          onKeyDown={handleOverlayKeyDown}
-          ref={modalOverlayRef}
-        />
+        <div aria-hidden className="modal__overlay" onClick={onClose} />
 
-        <div className="modal__container">{children}</div>
+        <div className="modal__container" ref={modalContainerRef} tabIndex={0}>
+          {children}
+        </div>
       </div>
     </Portal>
   );
